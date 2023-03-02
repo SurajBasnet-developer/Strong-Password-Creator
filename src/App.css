@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+body{
+  background-color: #61dafb;
+  text-align: center;
+}
+
+h3{
+  font-size: 35px;
+  color: rgb(14, 172, 9);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

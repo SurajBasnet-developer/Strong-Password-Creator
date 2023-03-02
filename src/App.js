@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button, Container, TextField } from "@mui/material";
+import { useState } from "react";
+import "./App.css";
+
+function generateRandomPassword(length) {
+  const charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?<>,./-=";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += charset.charAt(Math.floor(Math.random() * charset.length));
+  }
+  return password;
+}
 
 function App() {
+  const [passwordLength, setPasswordLength] = useState(12);
+  const [password, setPassword] = useState(
+    generateRandomPassword(passwordLength)
+  );
+  const handlePasswordLength = (event) => {
+    setPasswordLength(event.target.value);
+  };
+  const handleButtonClick = () => {
+    setPassword(generateRandomPassword(passwordLength));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <h3>Strong Password Creator</h3>
+      <TextField
+        label="Password Length"
+        type="number"
+        value={passwordLength}
+        onChange={handlePasswordLength}
+        InputProps={{ inputProps: { min: 6, max: 50 } }}
+        margin="normal"
+        fullWidth
+      ></TextField>
+      <TextField label="Password" value={password} margin="normal" fullWidth />
+
+      <Button variant="contained" color="primary" onClick={handleButtonClick}>
+        Generate Password
+      </Button>
+    </Container>
   );
 }
 
