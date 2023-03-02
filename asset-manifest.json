@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Strong-Password-Creator/static/css/main.21fccdc1.css",
+    "main.js": "/Strong-Password-Creator/static/js/main.e2251ffa.js",
+    "index.html": "/Strong-Password-Creator/index.html",
+    "main.21fccdc1.css.map": "/Strong-Password-Creator/static/css/main.21fccdc1.css.map",
+    "main.e2251ffa.js.map": "/Strong-Password-Creator/static/js/main.e2251ffa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21fccdc1.css",
+    "static/js/main.e2251ffa.js"
+  ]
+}
